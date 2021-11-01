@@ -1,0 +1,129 @@
+
+h1{
+    color: rgb(0, 255, 0)
+}
+
+.engine{
+    display: inline-block;
+    background-color: rgb(228, 176, 93);
+    height: 350px;
+    width: 270px;
+    border: 3px solid rgb(0, 0, 0);
+    box-shadow: 0 0 20px 0 rgb(0, 0, 0);
+    font-size: 20px;
+    margin: 10px;
+    text-align: center;
+}
+
+
+.engine_head img{
+    width: 90%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.engine_buy{
+    background: transparent;
+    border-width: 0;
+    position: relative;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    transition: .3s;
+    z-index: 1;
+    padding: 10px 20px;
+
+}
+
+.engine_buy span{
+    display: block;
+    position: relative;
+    z-index: 3;
+    background: #41294a;
+    color: white;
+    padding: 0 50px;
+    line-height: 60px;
+}
+
+.engine_buy::before {
+    content: "";
+    position: absolute;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    left: -5px;
+    top: -5px;
+    background: #c0253f;
+    z-index: -1;
+    transition: .4s ease-out;
+
+}
+
+.engine_name{
+    color: rgb(0, 0, 0);
+}
+
+.engine_buy::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    right: -5px;
+    bottom: -5px;
+    background: #11e0d3;
+    transition: .4s ease-out .1s;
+    z-index: -1;
+}
+
+.engine_buy:hover::before{
+    transform: translate(10px, 5px);
+}
+
+.engine_buy:hover::after{
+    transform: translate(-10px, -5px);
+}
+
+.engine_detail{
+    color: black;
+    background-color: rgb(95, 81, 228);
+    width:800px;
+    height: 1000px;
+
+}
+
+.engine_detaile_head img{
+    width: 570px;
+    height: 400px;
+}
+
+.engine_detail_description{
+    height: 150px;
+    overflow: scroll;
+}
+
+.engine_detail_product_information{
+    height: 150px;
+    overflow: scroll;
+}
+
+.engine_detail_stock{
+    color: rgb(199, 179, 4);
+    font-size: 22px;
+    height: 70mp;
+}
+
+.engine_detail_power{
+    font-size: 40px;
+}
+
+.engine_detail_price{
+    font-size: 22px;
+}
+
+.engine_detail_description{
+    font-size: 22px;
+}
+
+.engine_detail_product_information{
+    font-size: 22px;
+}
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+
+</head>
+<body>
+
+    <h1>Ваша корзина</h1>
+    <div class="cart">
+    {% if cart|length == 0 %}
+    <div class="cart_empty">
+        <h2 class="cart_empty_headline">Корзина пуста</h2>
+    </div>
+    {% else %}
+        <div class="cart_item_list">
+        {% for item in cart %}
+        {% with product=item.product %}
+        <div class="cart_item">
+            <div class="cart_item_image">
+                <a href="{{ product.get_absolut_url }}">
+                <img src="{{product.image_url}}">
+                </a>
+            </div>
+
+            <div class="cart_item_name">
+                {{ product.name}}
+            </div>
+
+            <div class="cart_itam_quantity">
+                {{ itam.quantity }}
+            </div>
+
+            <div class="cart_item_cost">
+                <p>Стоимость: {{ itam.total_price }} Денег</p>
+                <p>Цена за штуку: {{ item.price }} Денег</p>
+            </div>
+
+            <a class="cart_item_remove" herf="{% url "cart:cart_remove" product.id %}">X</a>
+
+        </div>
+        {% endwith %}
+        {% endfor %}
+    </div>
+
+    <div class"cart_details">
+        <div class="cart_total">
+            <h5>Сумма: {{ cart.get_total_prise }}</h5>
+        </div>
+        <a href="{% url "shop:product_list" %}" class="cart_shop">Продолжить покупку</a>
+        <a href="{% url "orders:order_create" %}" class="cart_order">
+            Оформить заказ
+        </a>
+    </div>
+
+    </div>
+
+        </div>
+    {% endif %}
+
+
+    </div>
+</body>
+</html>
