@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Engine, Category
 
 class EngineAdmin(admin.ModelAdmin):    # Страничка на сайте, которая будет отображать
-    list_display = ["name", "power", "image" ]   # Свойства которые будут отображаться
+    list_display = ["name", "image" ]   # Свойства которые будут отображаться
     prepopulated_fields = {"slug": ("name",)}     # Втоматическая генерация на основе других значений
 
 admin.site.register(Engine, EngineAdmin)   # Включить отображения "Этого всего" в админку

@@ -9,11 +9,10 @@
         <div class="engine_detaile_head"><img src="{{engine.image.url}}" alt="{{engine.name}}"></div>
         <div class="engine_detail_boby">
             <h3 class="engine_detail_name">{{engine.name}}</h3>
-            <p class="engine_detail_power"> Мощность: {{engine.power}}</p>
                 <p class="engine_detail_price"> Цена: {{engine.price}}</p>
                 <p class="engine_detail_description"> Описание: {{engine.description}}</p>
                 <p class="engine_detail_product_information"> Информация: {{engine.product_information}}</p>
-                <p class="engine_detail_stock"> {% if engine.stock > 0 %}Тованов на складе:{{engine.stock}} {% else %}Товаров нет на складе {% endif %}</p>
+                <p class="engine_detail_stock"> {% if engine.stock > 0 %}Товаров на складе: {{engine.stock}} {% else %}Товаров нет на складе {% endif %}</p>
 
             <form action={% url 'cart:cart_add' engine.id %} method='POST'>
                 <div class="quantity">

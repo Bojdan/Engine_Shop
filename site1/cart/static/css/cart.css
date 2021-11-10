@@ -1,0 +1,81 @@
+body{
+    font-family: "Roboto Slab";
+    background-color: #eee;
+}
+
+
+.cart{
+    display:flex;
+    justify-content: space-between;
+}
+
+.conteiner{
+    width: 1440px;
+    margin: 0 auto;
+}
+
+.cart_item_list{
+    background-color: rgb(255, 255, 255);
+    width: 1000px;
+    padding: 24px;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+    border-radius: 12px;
+    margin-right: 100px;
+}
+
+.cart_item{
+    display: flex;
+    height: 150px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart_item:not(:last-child){
+    border-bottom: 1px solid #000000;
+}
+
+.cart_item_image{
+    height: 100%;
+    width: 150px;
+
+}
+
+.cart_item_image img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.cart_item_name{
+    font-size: 22px;
+
+}
+
+.cart_details{
+    background-color:rgb(255, 255, 255);
+    width: 400px;
+    padding: 11px;
+    box-shadow: 0 0 12px rgb(0, 0, 0);
+    border-radius: 12px;
+}
+
+.cart_total{
+    font-size: 22px;
+}
+
+.cart_shop{
+    background-color: rgb(206, 187, 83);
+    color: rgb(255, 255, 255);
+    padding: 8px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.cart_shop:hover{
+    background-color: gold;
+}
+
+.cart_shop:active{
+    background-color: goldenrod;
+}

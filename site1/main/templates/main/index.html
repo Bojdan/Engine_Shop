@@ -1,20 +1,20 @@
 {% extends 'main/base.html' %}
 {% load static %}
 
-    {% block content %}
+{% block content %}
+<div class="engine_catalog">
+    <h1>{% if category %}{{category.name}}{% else %}Каталог{% endif %}:</h1>
 
-    <h1>{{category.name}}</h1>
-
-    {% for engine in engins %}
-    <div class="engine">
-        <div class="engine_head"><img src="{{engine.image.url}}" alt="{{engine.name}}"></div>
-        <div class="engine_boby">
-            <h3 class="engine_name">{{engine.name}}</h3>
-            <p class="engine_power">{{engine.power}}</p>
-            <a href={{engine.get_absolute_url}} class="engine_buy">Детальнее</a>
+    <div class="engine_list">
+        {% for engine in engins %}
+        <div class="engine">
+            <div class="engine_head"><img src="{{engine.image.url}}" alt="{{engine.name}}"></div>
+            <div class="engine_boby">
+                <h3 class="engine_name">{{engine.name}}</h3>
+                <a href={{engine.get_absolute_url}} class="engine_buy_main">Детальнее</a>
+            </div>
         </div>
+        {% endfor %}
     </div>
-
-    {% endfor %}
-
+</div>
 {% endblock  %}

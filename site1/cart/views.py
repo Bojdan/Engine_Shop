@@ -6,7 +6,7 @@ from main.models import Engine
 from .cart import Cart
 
 @require_POST
-def add(request, product_id):
+def cart_add(request, product_id):
     cart = Cart(request)
     engine = get_object_or_404(Engine, id=product_id)
     form = CartAddProductForm(request.POST)
@@ -16,10 +16,17 @@ def add(request, product_id):
                  quantity=cd['quantity'],
                  update_quantity=cd['update']
                  )
-        return redirect('cart:cart_detail')
+    return redirect('cart:cart_detail')
 
 
 
 def cart_detail(request):
     cart = Cart(request)
     return render(request, 'cart/cart.html', {'cart': cart})
+
+
+def cart_remove(request, product_id):
+    cart = Cart(request)
+    product = get_object_or_404(Engine, id=product_id)
+    cart.remove(product)
+    return redirect("cart:cart_detail")

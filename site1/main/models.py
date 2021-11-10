@@ -13,6 +13,10 @@ class Category(models.Model):
         verbose_name_plural = "Категории"
         unique_together =("slug", "parent",)
 
+    def __str__(self):
+        return self.name
+
+
     def get_absolute_url(self):
         return reverse("main:product_list_by_category", args=[self.slug])
 
@@ -20,7 +24,6 @@ class Category(models.Model):
 
 class Engine(models.Model):
     name = models.CharField(max_length=200, db_index=True)
-    power = models.PositiveIntegerField()         # Положительное целове число
     image = models.ImageField(upload_to="Engins")
     slug = models.SlugField(max_length=200, db_index=True)
     category = models.ForeignKey(Category, blank=True, null=True, related_name="product", on_delete=models.CASCADE)

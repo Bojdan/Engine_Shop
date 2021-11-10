@@ -62,9 +62,6 @@ class Cart(object):
             self.cart[str(product.id)]['product'] = product
 
         for item in self.cart.values():
-            destFile = r"D:\1.txt"
-            with open(destFile, 'a') as f:
-                f.write(str(item))
             item['price'] = Decimal(item['price'])
             item['total_price'] = item['price'] * item['quantity']
             yield item
